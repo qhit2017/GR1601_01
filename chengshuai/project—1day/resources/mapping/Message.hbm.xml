@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.chengshuai.bean.message" table="message" schema="dbo">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="mid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="mid" />
+            <!-- 自增-->
+            <generator class="native"></generator>
+        </id>
+
+        <property name="mname" type="java.lang.String">
+            <column name="mname"/>
+        </property>
+
+        <!--其他属性-->
+        <property name="maddr" type="java.lang.String">
+            <column name="maddr"/>
+        </property>
+
+        <property name="msex" type="java.lang.String">
+            <column name="msex"/>
+        </property>
+
+
+        <property name="mage" type="java.lang.String">
+            <column name="mage"/>
+        </property>
+
+
+        <property name="mphone" type="java.lang.String">
+            <column name="mphone"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>
