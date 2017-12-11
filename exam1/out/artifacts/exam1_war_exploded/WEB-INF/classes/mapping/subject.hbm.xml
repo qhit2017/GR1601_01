@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.xuhaoyu.bean.Subject" table="subject">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="suid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="suid"/>
+            <!-- 自增-->
+            <generator class="native"></generator>
+        </id>
+
+        <!--其他属性-->
+        <property name="sudirection" type="java.lang.String">
+            <column name="sudirection"/>
+        </property>
+        <property name="sustage" type="java.lang.String">
+            <column name="sustage"/>
+        </property>
+        <property name="sucourse" type="java.lang.String">
+            <column name="sucourse"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
