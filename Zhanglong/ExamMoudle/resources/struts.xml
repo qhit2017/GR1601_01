@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <package name="default" namespace="/" extends="json-default">
+        <action name="*" class="com.zhanglong.controller.LoginController" method="{1}">
+            <result name="student"> student.jsp</result>
+            <result name="teacher"> teacher.jsp</result>
+            <result name="role">role.jsp</result>
+        </action>
+
+        <action name="showteacherlist" class="com.zhanglong.controller.TeacherController" method="showteacherlist">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+
+        </action>
+
+        <action name="saveorupdateteacher" class="com.zhanglong.controller.TeacherController" method="saveorupdateteacher">
+            <result name="saveorupdateteacher" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+
+        </action>
+
+        <action name="selectname" class="com.zhanglong.controller.TeacherController" method="selectname">
+            <result name="selectname" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+
+        <action name="selectid" class="com.zhanglong.controller.TeacherController" method="selectid">
+            <result name="selectid" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+
+
+        </action>
+        <action name="addteachernumber" class="com.zhanglong.controller.TeacherController" method="addteachernumber">
+            <result name="addteachernumber" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="shanchu" class="com.zhanglong.controller.TeacherController" method="shanchu">
+            <result name="shanchu" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+
+        <action name="chongzhi" class="com.zhanglong.controller.TeacherController" method="chongzhi">
+            <result name="chongzhi" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+        <action name="addteacher1" class="com.zhanglong.controller.TeacherController" method="addteacher1">
+            <result name="addteacher1">addteacher1.jsp</result>
+        </action>
+   <!--                       班级-->
+
+        <action name="showclasseslist" class="com.zhanglong.controller.ClassesController" method="showclasseslist">
+            <result name="showclasseslist" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="selectjiangshi" class="com.zhanglong.controller.ClassesController" method="selectjiangshi">
+            <result name="selectjiangshi" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="selectbanzhuren" class="com.zhanglong.controller.ClassesController" method="selectbanzhuren">
+        <result name="selectbanzhuren" type="json">
+            <param name="root">jsonstr</param>
+        </result>
+         </action>
+
+        <action name="selectchaxun" class="com.zhanglong.controller.ClassesController" method="selectchaxun">
+            <result name="selectchaxun" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+
+        <action name="saveorupdate" class="com.zhanglong.controller.ClassesController" method="saveorupdate">
+            <result name="saveorupdate" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="bianji" class="com.zhanglong.controller.ClassesController" method="bianji">
+            <result name="bianji">addclasses1.jsp</result>
+        </action>
+        <action name="saveorupdate1" class="com.zhanglong.controller.ClassesController" method="saveorupdate1">
+            <result name="saveorupdate1" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!--学生信息-->
+        <action name="chaxunsuoyou" class="com.zhanglong.controller.StudentController" method="chaxunsuoyou">
+            <result name="chaxunsuoyou" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <action name="fivechaxun" class="com.zhanglong.controller.StudentController" method="fivechaxun">
+            <result name="fivechaxun" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <action name="uploadimg" class="com.zhanglong.controller.StudentController" method="uploadimg">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="tianjiasaveorupdate" class="com.zhanglong.controller.StudentController" method="tianjiasaveorupdate">
+            <result name="tianjiasaveorupdate" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <action name="chongzhi" class="com.zhanglong.controller.StudentController" method="chongzhi">
+            <result name="chongzhi" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <action name="shanchu" class="com.zhanglong.controller.StudentController" method="shanchu">
+            <result name="shanchu" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <action name="addstudent1" class="com.zhanglong.controller.StudentController" method="addstudent1">
+            <result name="addstudent1">addstudent1.jsp</result>
+        </action>
+              <!-- 空模板下载-->
+        <action name="filedown" class="com.zhanglong.controller.FileDownController" method="filedown">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <!--导出-->
+        <action name="daochucontroller" class="com.zhanglong.controller.DaochuController" method="daochucontroller">
+            <!--type="stream" 流的形式传输-->
+            <result name="success" type="stream">
+                <!--指定用的流-->
+                <param name="inputName">inputStream</param>
+                <!--传输类型-->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <!--文件名-->
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+     <!--导入-->
+        <action name="daorucontroller" class="com.zhanglong.controller.DaoruController" method="daorucontroller">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+              <!--试题-->
+        <action name="chaxunxinxi" class="com.zhanglong.controller.QuestionController" method="chaxunxinxi">
+            <result name="chaxunxinxi" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="chashumu" class="com.zhanglong.controller.QuestionController" method="chashumu">
+            <result name="chashumu" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="chaname" class="com.zhanglong.controller.QuestionController" method="chaname">
+            <result name="chaname">addquestion.jsp
+            </result>
+        </action>
+        <action name="chaquestionbank" class="com.zhanglong.controller.QuestionController" method="chaquestionbank">
+            <result name="chaquestionbank" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="saveorupdatexinxi" class="com.zhanglong.controller.QuestionController" method="saveorupdatexinxi">
+            <result name="saveorupdatexinxi" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+         <!--试卷table显示-->
+        <action name="selectTestpaper" class="com.zhanglong.controller.ShijuanController" method="selectTestpaper">
+            <result name="selectTestpaper" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="xialakuang" class="com.zhanglong.controller.ShijuanController" method="xialakuang">
+            <result name="xialakuang" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <action name="fivechaxun" class="com.zhanglong.controller.ShijuanController" method="fivechaxun">
+            <result name="fivechaxun" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+
+    </package>
+
+</struts>
