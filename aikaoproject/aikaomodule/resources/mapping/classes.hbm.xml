@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.wangmengyuan.bean.Classes" table="classes">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="cid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="cid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="cnumber" type="java.lang.String">
+            <column name="cnumber"/>
+        </property>
+        <!--其他属性-->
+        <property name="cname" type="java.lang.String">
+            <column name="cname"/>
+        </property>
+        <!--其他属性-->
+        <property name="cdirection" type="java.lang.String">
+            <column name="cdirection"/>
+        </property>
+        <!--其他属性-->
+        <property name="tidl" type="java.lang.Integer">
+            <column name="tidl"/>
+        </property>
+        <!--其他属性-->
+        <property name="tidh" type="java.lang.Integer">
+            <column name="tidh"/>
+        </property>
+        <!--其他属性-->
+        <property name="cbegin" type="java.lang.String">
+            <column name="cbegin"/>
+        </property>
+        <!--其他属性-->
+        <property name="cg1" type="java.lang.Integer">
+            <column name="cg1"/>
+        </property>
+        <!--其他属性-->
+        <property name="cg2" type="java.lang.Integer">
+            <column name="cg2"/>
+        </property>
+        <!--其他属性-->
+        <property name="cg3" type="java.lang.Integer">
+            <column name="cg3"/>
+        </property>
+        <!--其他属性-->
+        <property name="cstate" type="java.lang.Integer">
+            <column name="cstate"/>
+        </property>
+        <!--其他属性-->
+        <property name="cremark" type="java.lang.String">
+            <column name="cremark"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

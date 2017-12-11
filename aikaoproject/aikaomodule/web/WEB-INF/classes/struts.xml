@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <package name="default" namespace="/" extends="json-default">
+        <!--<action name="getUser" class="com.zk.qhit.controller.JsonController" method="testJson">
+            <result name="jsonresult" type="json">
+                <param name="root">userJson</param>
+            </result>
+        </action>-->
+        <!--角色登录-->
+        <action name="*" class="com.wangmengyuan.Controller.loginController" method="{1}">
+            <result name="fail">login.jsp</result>
+            <result name="hi">teacher.jsp</result>
+        </action>
+        <!--教师查询-->
+        <action name="queryshow" class="com.wangmengyuan.Controller.TeacherController" method="queryshow">
+            <result name="success" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+
+        <!--条件查询-->
+        <action name="selectall" class="com.wangmengyuan.Controller.TeacherController" method="selectall">
+            <result name="success" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+        <!--保存教师信息-->
+        <action name="saveString" class="com.wangmengyuan.Controller.TeacherController" method="saveString">
+            <result name="update" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+
+        <!-- 修改教师信息-->
+        <action name="xiuteacherinfo" class="com.wangmengyuan.Controller.TeacherController" method="xiuteacherinfo">
+            <result name="saveString" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+        <!-- 重置密码-->
+        <action name="resetpassword" class="com.wangmengyuan.Controller.TeacherController" method="resetpassword">
+            <result name="resetpassword2" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+        <!-- 账号有序生成-->
+        <action name="addTeachers" class="com.wangmengyuan.Controller.TeacherController" method="addTeachers">
+            <result name="addTeacheret" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+        <!--保存教师信息-->
+        <action name="saveinfo" class="com.wangmengyuan.Controller.TeacherController" method="saveinfo">
+            <result name="saveinfo1" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+        <!--   -->
+        <action name="selectTeacherTjob0" class="com.wangmengyuan.Controller.TeacherController" method="selectTeacherTjob0">
+            <result name="success" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+
+        <!--班级配置-->
+
+        <!--班级显示-->
+        <action name="showall" class="com.wangmengyuan.Controller.ClassesController" method="showall">
+            <result name="successes" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!--  查询讲师姓名-->
+        <action name="selectTeachersTjob0" class="com.wangmengyuan.Controller.ClassesController" method="selectTeachersTjob0">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+        <!-- 查询班主任姓名-->
+        <action name="selectTeachersTjob1" class="com.wangmengyuan.Controller.ClassesController" method="selectTeachersTjob1">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!-- 条件查询-->
+        <action name="select" class="com.wangmengyuan.Controller.ClassesController" method="select">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+        <action name="saveOrupdateClasses" class="com.wangmengyuan.Controller.ClassesController" method="saveOrupdateClasses">
+            <result name="teachersinfo" >Classes.jsp</result>
+        </action>
+
+        <!-- 学生显示-->
+        <action name="showStudent" class="com.wangmengyuan.Controller.StudentController" method="showStudent">
+            <result name="jsonstr" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!--添加学生-->
+        <action name="insertstudent" class="com.wangmengyuan.Controller.StudentController" method="insertstudent">
+            <result name="success">insertstudent.jsp</result>
+        </action>
+
+        <!-- 条件查询-->
+        <action name="condition" class="com.wangmengyuan.Controller.StudentController" method="condition">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+    </package>
+</struts>
