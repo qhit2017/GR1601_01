@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="default" namespace="/" extends="json-default">
+
+        <action name="login" class="com.guolonglong.controller.LoginController" method="login">
+
+            <result name="teachers">teachers.jsp</result>
+            <result name="login">login.jsp</result>
+
+        </action>
+        <action name="*" class="com.guolonglong.controller.TeachersController" method="{1}">
+            <result name="teacher" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+            <result name="insertteachers">insertteachers.jsp</result>
+            <result name="teachers">teachers.jsp</result>
+           <!-- <result name="updateteachers" type="json">
+                <param name="root">jsonStr</param>
+            </result>-->
+            <result name="updateteacher">updateteacher.jsp</result>
+        </action>
+
+       <!-- <action name="*" class="com.guolonglong.controller.PageController" method="{1}">
+            <result name="teachers">teachers.jsp</result>
+        </action>-->
+
+        <action name="*" class="com.guolonglong.controller.ClassesController" method="{1}">
+            <result name="class" type="json">
+                <param name="root">strJson</param>
+            </result>
+            <result name="insertclasses">insertclasses.jsp</result>
+            <result name="classes">classes.jsp</result>
+            <result name="updateclasses">updateclasses.jsp</result>
+        </action>
+
+        <action name="studentsshowlist" class="com.guolonglong.controller.StudentsController" method="studentsshowlist">
+            <result name="student" type="json">
+                <param name="root">strJson</param>
+            </result>
+           <!-- <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>-->
+        </action>
+        <action name="findstudents" class="com.guolonglong.controller.StudentsController" method="findstudents">
+            <result name="insertstudents">insertstudents.jsp</result>
+        </action>
+        <action name="uploadImg" class="com.guolonglong.controller.StudentsController" method="uploadImg">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <!--下载模块-->
+        <action name="studentsdown" class="com.guolonglong.controller.StudentsDownController" method="studentsdown">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+
+        </action>
+        <!--导出-->
+        <action name="studentsexport" class="com.guolonglong.controller.StudentsExportController" method="studentsexport">
+            <result name="successes" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+             </result>
+        </action>
+        <!--导入-->
+        <action name="studentimport" class="com.guolonglong.controller.StudentsImportController" method="studentimport">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+                                            <!--题库-->
+        <action name="questionbankshowlist" class="com.guolonglong.controller.QuestionBankController" method="questionbankshowlist">
+            <result name="questionbankshowlist" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="questionbankshow" class="com.guolonglong.controller.QuestionBankController" method="questionbankshow">
+            <result name="questionbankshow" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="questionbanklist" class="com.guolonglong.controller.QuestionBankController" method="questionbanklist">
+            <result name="questionbankinfo" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <!--  选题组卷  -->
+        <action name="cloosepaper" class="com.guolonglong.controller.QuestionBankController" method="cloosepaper">
+            <result name="cloosepaper" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="getmodal" class="com.guolonglong.controller.QuestionBankController" method="getmodal">
+            <result name="getmodal" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="questionbankimport" class="com.guolonglong.controller.QBImportController" method="questionbankimport">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <action name="testpaperlist" class="com.guolonglong.controller.TestPaperController" method="testpaperlist">
+            <result name="testpaperlist" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <!--  选题组卷的创建试卷  -->
+        <action name="selectpaper" class="com.guolonglong.controller.CreatePaperController" method="selectpaper">
+            <result name="exampaper">exampaper.jsp</result>
+        </action>
+
+    </package>
+</struts>

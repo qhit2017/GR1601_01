@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.guolonglong.bean.TestPaper" table="testpaper"><!--dbo是 server默认的-->
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="tid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="tid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="ttype" type="java.lang.String">
+            <column name="ttype"/>
+        </property>
+
+        <property name="ttitle" type="java.lang.String">
+            <column name="ttitle"/>
+        </property>
+
+        <property name="ttime" type="java.lang.String">
+            <column name="ttime"/>
+        </property>
+
+        <property name="tstate" type="java.lang.String">
+            <column name="tstate"/>
+        </property>
+
+        <property name="tsum" type="java.lang.Integer">
+            <column name="tsum"/>
+        </property>
+
+        <property name="teachscore" type="java.lang.Integer">
+            <column name="teachscore"/>
+        </property>
+
+        <!--一对一的关系映射-->
+        <one-to-one name="subject" class="com.guolonglong.bean.Subject" lazy="false" ></one-to-one>
+
+
+    </class>
+</hibernate-mapping>
