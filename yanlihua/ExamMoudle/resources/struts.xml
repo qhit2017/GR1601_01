@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <!-- 图片上传大小设置-->
+    <constant name="struts.multipart.maxSize" value="10485760"></constant>
+    <package name="default" namespace="/" extends="json-default"><!--json-default-->
+
+        <!--====================登录===========================================================-->
+        <action name="*" class="com.yanlihua.controller.LoginController" method="{1}">
+            <result name="allresult" type="json">
+                <param name="root">loginwayresult</param>
+            </result>
+        </action>
+
+        <!--=============================（教师页面）主页面显示==========================================-->
+        <action name="selectallteacherinfo" class="com.yanlihua.controller.TeacherController"
+                method="selectallteacherinfo">
+            <result name="selectAllTeacherInfoResult" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--=============================（教师页面）主页面page==========================================-->
+        <action name="getPage" class="com.yanlihua.controller.TeacherController" method="getPage">
+            <result name="jsonpage" type="json">
+                <param name="root">strJsonPage</param>
+            </result>
+        </action>
+
+        <!--==============================教师的查询功能（账号，姓名，岗位）===================================-->
+        <action name="threecoditionselect" class="com.yanlihua.controller.TeacherController"
+                method="threecoditionselect">
+            <result name="threecoditionselectresult" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+
+        <!--=================================编辑教师信息====================================================================-->
+        <action name="editteacherinfo" class="com.yanlihua.controller.TeacherController" method="editteacherinfo">
+            <result name="addteacherinforesult" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--saveorupdateway-->
+        <!--=================================教师信息增加和信息的更改=================================================-->
+        <action name="saveorupdateway" class="com.yanlihua.controller.TeacherController" method="saveorupdateway">
+            <result name="saveorupdatesuccess" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--resetbyidway-->
+        <!--=============================根据tid查询出信息更改成统一的密码=================================================-->
+        <action name="resetbyidway" class="com.yanlihua.controller.TeacherController" method="resetbyidway">
+            <result name="resetpwdsuccess" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--deletebyidway-->
+        <!--=============================根据tid查询出信息更改成统一的密码=================================================-->
+        <action name="deletebyidway" class="com.yanlihua.controller.TeacherController" method="deletebyidway">
+            <result name="deletesuccess" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--addteachertnumberway-->
+        <!--===================================添加教师编码随机有序的生成====================================================-->
+        <action name="addteachertnumberway" class="com.yanlihua.controller.TeacherController"
+                method="addteachertnumberway">
+            <result name="addteachertnumberresult" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+        <!--===================================添加教师save====================================================-->
+        <action name="saveteacherway" class="com.yanlihua.controller.TeacherController" method="saveteacherway">
+            <result name="savewaysuccess" type="json">
+                <param name="root">teacherInfo</param>
+            </result>
+        </action>
+
+
+        <!---++++++++++++++++++++++++++++++++++++班级管理++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <!--===============================班级查询功能=======================================================================-->
+        <action name="selectclassallinfoway" class="com.yanlihua.controller.ClassesController"
+                method="selectclassallinfoway">
+            <result name="classallinforesult" type="json">
+                <param name="root">classallinfo</param>
+            </result>
+        </action>
+
+        <!-- ===================================下拉框显示讲师===========================================================-->
+        <action name="selectallinfob" class="com.yanlihua.controller.ClassesController" method="selectallinfob">
+            <result name="selectallinfobresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+        <!-- =================================下拉框显示班主任===========================================================-->
+        <action name="selectallinfoj" class="com.yanlihua.controller.ClassesController" method="selectallinfoj">
+            <result name="selectallinfobresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+        <!-- =================================四个条件的班级查询===========================================================-->
+        <action name="fourconditionselectway" class="com.yanlihua.controller.ClassesController"
+                method="fourconditionselectway">
+            <result name="fourconditionselectwayresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+        <!-- =================================添加保存班级信息===========================================================-->
+        <action name="saveclassesinfoway" class="com.yanlihua.controller.ClassesController" method="saveclassesinfoway">
+            <result name="saveclassesinfowayresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+
+        <!--selectcidselectinfoway-->
+        <!-- =================================根据cid查询信息===========================================================-->
+        <action name="selectcidselectinfoway" class="com.yanlihua.controller.ClassesController"
+                method="selectcidselectinfoway">
+            <result name="selectcidselectinfowayresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+        <!--selecttidupdateinfoway-->
+        <!-- =================================根据cid(修改)更改信息===========================================================-->
+        <action name="tidupdateinfoway" class="com.yanlihua.controller.ClassesController" method="tidupdateinfoway">
+            <result name="tidupdateinfowayresult" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+
+        <!--=============================（班级页面）主页面page==========================================================-->
+        <action name="getpage" class="com.yanlihua.controller.ClassesController" method="getpage">
+            <result name="jsonpage" type="json">
+                <param name="root">strJsonPage</param>
+            </result>
+        </action>
+
+        <!--=============================（班级页面）查询所有班级名字=========================================================-->
+        <action name="selectallclassnameway" class="com.yanlihua.controller.ClassesController"
+                method="selectallclassnameway">
+            <result name="selectallclassnamewayresult" type="json">
+                <param name="root">classallinfo</param>
+            </result>
+        </action>
+        <!--=============================（学生页面）图片上传==========================================================-->
+        <action name="uploadimg" class="com.yanlihua.controller.StudentsController" method="uploadimg">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <!--=============================学生页面所有信息显示===(学生页面动态查询班级)=======================================================-->
+        <action name="selectstudentinfoway" class="com.yanlihua.controller.StudentsController"
+                method="selectstudentinfoway">
+            <result name="selectclassinfowayresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <!--=============================学生页面五个条件的查询==========================================================-->
+        <action name="fiveconditionselectway" class="com.yanlihua.controller.StudentsController"
+                method="fiveconditionselectway">
+            <result name="fiveconditionselectwayresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+
+        <!--addstudentinfoway-->
+        <!--=============================保存学生界面的信息==========================================================-->
+        <action name="addstudentinfoway" class="com.yanlihua.controller.StudentsController" method="addstudentinfoway">
+            <result name="addstudentinfowayresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <!--selectstudentinfobysidway-->
+        <!--=============================根据sid显示信息到各自的文本框中==========================================================-->
+        <action name="selectstudentinfobysidway" class="com.yanlihua.controller.StudentsController"
+                method="selectstudentinfobysidway">
+            <result name="selectstudentinfobysidwayresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <!--resetpwd-->
+        <!--=============================密码重置功能==========================================================-->
+        <action name="resetpwd" class="com.yanlihua.controller.StudentsController" method="resetpwd">
+            <result name="resetpwdresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <!--deleteobj-->
+        <!--======================================删除学生对象=================================================-->
+        <action name="deleteobj" class="com.yanlihua.controller.StudentsController" method="deleteobj">
+            <result name="deleteobjresult" type="json">
+                <param name="root">studentinfo</param>
+            </result>
+        </action>
+        <!--filedown-->
+        <!--======================================学生的下载模板功能===========================================================-->
+        <action name="filedown" class="com.yanlihua.controller.FileDownController" method="filedown">
+            <!--type="stream" 流的形式传输-->
+            <result name="success" type="stream">
+                <!--指定用的流-->
+                <param name="inputName">inputStream</param>
+                <!--传输类型-->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <!--文件名-->
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <!--exportstudentinfo-->
+        <!--======================================学生信息导出===============================================================-->
+        <action name="exportstudentinfo" class="com.yanlihua.controller.ExportStudentInfoController"
+                method="exportstudentinfo">
+            <!--type="stream" 流的形式传输-->
+            <result name="success" type="stream">
+                <!--指定用的流-->
+                <param name="inputName">inputStream</param>
+                <!--传输类型-->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <!--文件名-->
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <!--======================================学生信息导入===============================================================-->
+
+        <action name="importexcel" class="com.yanlihua.controller.ImportStudentInfoController" method="importexcel">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+
+        <!-- ========================================题库的所有信息显示============================================================================= -->
+        <action name="selectallquestionbankinfo" class="com.yanlihua.controller.PfwrittentestController"
+                method="selectallquestionbankinfo">
+            <result name="selectallquestionbankinforesult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+        <!--deletequestionway-->
+        <!-- ========================================根据题的题号进行删除============================================================================= -->
+        <action name="deletequestionway" class="com.yanlihua.controller.PfwrittentestController"
+                method="deletequestionway">
+            <result name="deletequestionwayresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+
+        <!--=============================（题库页面）主页面page==========================================================-->
+        <action name="getpage" class="com.yanlihua.controller.PfwrittentestController" method="getpage">
+            <result name="jsonpage" type="json">
+                <param name="root">strJsonPage</param>
+            </result>
+        </action>
+        <!--=================================保存试题======================================================-->
+        <action name="savequestion" class="com.yanlihua.controller.PfwrittentestController" method="savequestion">
+            <result name="savequestionresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+
+        <!--selectlikesucourseway-->
+        <!--=================================模糊查询试题题目是否存在======================================================-->
+        <action name="selectlikesucourseway" class="com.yanlihua.controller.PfwrittentestController"
+                method="selectlikesucourseway">
+            <result name="selectlikesucoursewayresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+        <!--updatequestioninfoway-->
+        <!--===================================根据id经行题目的显示===================================================-->
+        <action name="updatequestioninfoway" class="com.yanlihua.controller.PfwrittentestController"
+                method="updatequestioninfoway">
+            <result name="updatequestioninfowayresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+        <!--updatequestionway-->
+        <!--===================================根据id经行题目的修改===================================================-->
+        <action name="updatequestionway" class="com.yanlihua.controller.PfwrittentestController"
+                method="updatequestionway">
+            <result name="updatequestionwayresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+        <!--selecttestpaperallinfoway-->
+        <!--=======================================Exam试卷列表==========================================================-->
+        <!--=======================================Exam试卷的所有信息显示======================================================-->
+
+        <action name="selecttestpaperallinfoway" class="com.yanlihua.controller.ExamController"
+                method="selecttestpaperallinfoway">
+            <result name="selecttestpaperallinfowayresult" type="json">
+                <param name="root">examinfo</param>
+            </result>
+        </action>
+        <!--selectsubjectinfoway-->
+        <!--=====================================查询所有科目信息将名字显示到下拉框中==================================================-->
+        <action name="selectsubjectinfoway" class="com.yanlihua.controller.ExamController"
+                method="selectsubjectinfoway">
+            <result name="selectsubjectinfowayresult" type="json">
+                <param name="root">examinfo</param>
+            </result>
+        </action>
+        <!--selectinfobyfiveconditionway-->
+        <!--=====================================五个条件查询==================================================-->
+        <action name="selectinfobyfiveconditionway" class="com.yanlihua.controller.ExamController"
+                method="selectinfobyfiveconditionway">
+            <result name="selectinfobyfiveconditionwayresult" type="json">
+                <param name="root">examinfo</param>
+            </result>
+        </action>
+
+
+        <!--=========================================试题信息的导入==========================================================-->
+        <action name="importexaminfo" class="com.yanlihua.controller.ImportExamInfoController" method="importexaminfo">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+        <!--===============================================在线考试管理系统=====================================================-->
+        <action name="selectinfobytwocond" class="com.yanlihua.controller.QuestionBankController"
+                method="selectinfobytwocond">
+            <result name="selectinfobytwocondresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+
+        <!-- selectquestionnumber-->
+        <!--===============================================每个科目下笔试题的数量=====================================================-->
+        <action name="selectquestionnumber" class="com.yanlihua.controller.QuestionBankController"
+                method="selectquestionnumber">
+            <result name="selectquestionnumberresult" type="json">
+                <param name="root">questionbankinfo</param>
+            </result>
+        </action>
+
+        <!--selectsnamebysuid-->
+        <!--==============================================根据id查询科目名称进行查询=========================================================================-->
+        <action name="selectsnamebysuid" class="com.yanlihua.controller.QuestionBankController"
+                method="selectsnamebysuid">
+            <result name="selectsnamebysuidresult">
+                pfwrittentestlist.jsp
+            </result>
+        </action>
+
+        <!--showsubjectname-->
+        <!--=========================================显示添加试题这个界面（想多了）=====================================================================-->
+        <!--  <action name="showsubjectname" class="com.yanlihua.controller.PfwrittentestController" method="showsubjectname">
+              <result name="showsubjectnameresult" type="json">
+                  <param name="root">questionbankinfo</param>
+              </result>
+          </action>-->
+
+        <!--=============================================gradelist列表==============================================-->
+        <!--=============================================查询所信息==============================================-->
+        <action name="selecttestpaperallinfoway1" class="com.yanlihua.controller.GradeController"
+                method="selecttestpaperallinfoway1">
+            <result name="selecttestpaperallinfoway1result" type="json">
+                <param name="root">testpaperinfo</param>
+            </result>
+        </action>
+        <!--=============================================下拉框条件查询==============================================-->
+
+        <action name="selectconformconditioninfo" class="com.yanlihua.controller.GradeController"
+                method="selectconformconditioninfo">
+            <result name="selectconformconditioninforesult" type="json">
+                <param name="root">testpaperinfo</param>
+            </result>
+        </action>
+        <!--selectgradebnt-->
+        <!--==========================================grade查看成绩按钮========================================================================-->
+
+        <action name="selectgradebnt" class="com.yanlihua.controller.GradeController" method="selectgradebnt">
+            <result name="selectgradebntresult">
+                subjecttestlist.jsp
+            </result>
+        </action>
+        <!--showinterfaceinfoway-->
+        <!--=======================================查看成绩的界面信息显示========================================================-->
+
+        <action name="showinterfaceinfoway" class="com.yanlihua.controller.GradeController"
+                method="showinterfaceinfoway">
+            <result name="showinterfaceinfowayresult" type="json">
+                <param name="root">testpaperinfo</param>
+            </result>
+        </action>
+
+        <!--viewtestdetailsway-->
+        <!--=======================================考试详情跳页面========================================================-->
+
+        <action name="viewtestdetailsway" class="com.yanlihua.controller.GradeController" method="viewtestdetailsway">
+            <result name="viewtestdetailswayresult">
+                testdetails.jsp
+            </result>
+        </action>
+
+        <!--selecttidway-->
+        <!--=======================================发送请求去tid========================================================-->
+        <action name="selecttidway" class="com.yanlihua.controller.GradeController" method="selecttidway">
+            <result name="selecttidwayresult" type="json">
+                <param name="root">testpaperinfo</param>
+            </result>
+        </action>
+        <!--selectquestionbankbytid-->
+        <!--=======================================tid查询题=======================================================-->
+        <action name="selectquestionbankbytid" class="com.yanlihua.controller.OnlinetestController"
+                method="selectquestionbankbytid">
+            <result name="selectquestionbankbytidresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+        <!--=========================================试题的创建createpaper==========================================================================-->
+        <action name="selectsubjectinfobysuidway" class="com.yanlihua.controller.CreatepaperController"
+                method="selectsubjectinfobysuidway">
+            <result name="selectsubjectinfobysuidwayresult" type="json">
+                <param name="root">createpaperinfo</param>
+            </result>
+        </action>
+        <!--selecttopicgroup-->
+        <!--=========================================选题组卷==========================================================================-->
+        <action name="selecttopicgroup" class="com.yanlihua.controller.CreatepaperController" method="selecttopicgroup">
+            <result name="selecttopicgroupresult" type="json">
+                <param name="root">createpaperinfo</param>
+            </result>
+        </action>
+        <!--savetestpaperinfo-->
+        <!-- =======================================随机组卷===============================================================-->
+        <action name="savetestpaperinfo" class="com.yanlihua.controller.CreatepaperController"
+                method="savetestpaperinfo">
+            <result name="savetestpaperinforesult" type="json">
+                <param name="root">createpaperinfo</param>
+            </result>
+        </action>
+
+        <!--===============================================开始考试=========================================================-->
+        <!--begintest-->
+        <action name="begintest" class="com.yanlihua.controller.ExamController" method="begintest">
+            <result name="begintestresult">
+                begintest.jsp
+            </result>
+        </action>
+
+        <!--saveinfointogradeway-->
+        <action name="saveinfointogradeway" class="com.yanlihua.controller.ExamController"
+                method="saveinfointogradeway">
+            <result name="saveinfointogradewayresult" type="json">
+                <param name="root">examinfo</param>
+            </result>
+        </action>
+
+        <!--==============================================在线考试oneline(信息显示)=============================================-->
+        <!--studentselectinfoway-->
+        <action name="studentselectinfoway" class="com.yanlihua.controller.OnlinetestController"
+                method="studentselectinfoway">
+            <result name="studentselectinfowayresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+
+        <!--selecttestpaperinfobytidway-->
+        <!--==============================================根据tid显示答题卡上的个人信息============================================-->
+        <action name="selecttestpaperinfobytidway" class="com.yanlihua.controller.OnlinetestController"
+                method="selecttestpaperinfobytidway">
+            <result name="selecttestpaperinfobytidwayresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+        <!--selectquestionbankway-->
+        <!--============================================查询此试卷中的试题============================================-->
+        <action name="selectquestionbankway" class="com.yanlihua.controller.OnlinetestController"
+                method="selectquestionbankway">
+            <result name="selectquestionbankwayresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+        <!--============================================根据题画框============================================-->
+        <action name="selectquestionbankwayframe" class="com.yanlihua.controller.OnlinetestController"
+                method="selectquestionbankwayframe">
+            <result name="selectquestionbankwayframeresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+        <!--===============================================每次点击出一道题（相当于分页）=====================================================-->
+        <action name="getPage" class="com.yanlihua.controller.OnlinetestController" method="getPage">
+            <result name="jsonpage" type="json">
+                <param name="root">strJsonPage</param>
+            </result>
+        </action>
+        <!--contrastanswerway-->
+        <!--======================================答得答案与正确答案进行对比===========================================================-->
+        <action name="contrastanswerway" class="com.yanlihua.controller.OnlinetestController"
+                method="contrastanswerway">
+            <result name="contrastanswerwayresult" type="json">
+                <param name="root">onlinetestStr</param>
+            </result>
+        </action>
+
+
+    </package>
+</struts>

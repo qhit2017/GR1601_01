@@ -1,0 +1,106 @@
+
+
+#bigdiv {
+    width: 100%;
+    height: 750px;
+    background-color: gainsboro;
+    position: fixed;
+}
+
+#topdiv {
+    width: 100%;
+    height: 60px;
+    background-color: gainsboro;
+    border-bottom: 1px solid black;
+}
+
+#leftdiv {
+    width: 299px;
+    height: 640px;
+    position: relative;
+    background-color: beige;
+    border-right: 1px solid black;
+}
+
+#rightdiv {
+    width: 1300px;
+    height: 640px;
+    position: relative;
+    bottom: 640px;
+    left: 300px;
+    background-color: lavender;
+}
+
+.tablemargin {
+    text-align: center;
+}
+
+#title {
+    position: relative;
+    left: 400px;
+    font-size: 20px
+}
+
+#page {
+    width:320px;
+    height: 40px;
+    position: relative;
+    top: 650px;
+    left:1050px;
+    z-index: 10;
+
+}
+#bottomdiv {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: none; /*是否显示*/
+    background-color: gainsboro;
+}
+
+.affirm1 {
+    width: 100px;
+    height: 30px;
+}
+#teachertable1 {
+    height: 600px;
+    width: 500px;
+    position: relative;
+    left: 500px
+}
+a{
+    text-decoration: none;
+}
+
+#teacherinfo{
+    position:relative;
+    width: 1000px;
+    top: 20px;
+}
+
+/*!*层1的样式*!
+.div1 {
+    !*本层要实现覆盖模式窗口以外全部内容的半透明效果*!
+    background-color: #000000; !*背景色*!
+    opacity: 0.5;
+    position: absolute; !*绝对定位，必选，使层绝对依照top,left的标准显示，否则将不能实现覆盖*!
+    top: 0; !*层与页面顶部距离*!
+    left: 0; !*层与左侧边距离*!
+    z-index: 10; !*当发生重叠时的优先级，数大的会覆盖数较小的，没进行设置的均可视为小于0*!
+    display: none; !*层是否可见，初始化none不可见*!
+    !*filter: Alpha(opacity=30); *!!*过滤颜色，设置透明度（可见度）30，数越小越透明*!
+}
+
+!*层2的样式*!
+.div2 {
+    !*本层显示在最前端，其它控件均不可用*!
+    width: 100%; !*显示宽度*!
+    height: 100%; !*显示高度*!
+    position: absolute; !*绝对定位*!
+    z-index: 11; !*优先级*!
+    display: none; !*是否显示*!
+    border: 1px inset darkgray; !*边框：宽度，样式，颜色*!
+    background-color: dimgray; !*背景色*!
+    !* opacity: 0.8;*!
+}*/
+
