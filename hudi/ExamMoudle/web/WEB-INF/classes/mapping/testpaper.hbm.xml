@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.chengshuai.bean.Testpaper" table="testpaper">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="tid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="tid"/>
+            <!-- 自增-->
+            <generator class="native"></generator>
+        </id>
+
+        <set name="questionbankSet" table="middle">
+            <key column="tid"></key>
+            <many-to-many class="com.chengshuai.bean.Questionbank" column="qid"></many-to-many>
+        </set>
+        
+
+    </class>
+</hibernate-mapping>
