@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.jiang.bean.Grade" table="grade">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="gid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="gid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="gscore" type="java.lang.Integer">
+            <column name="gscore"/>
+        </property>
+
+        <property name="ganswer" type="java.lang.String">
+            <column name="ganswer"/>
+        </property>
+
+        <property name="gendtime" type="java.lang.Integer">
+            <column name="cdirection"/>
+        </property>
+
+        <!--<many-to-one name="students" class="com.jiang.bean.Students" column="sid"></many-to-one>
+        <many-to-one name="testpaper" class="com.jiang.bean.Testpaper" column="tid"></many-to-one>-->
+    </class>
+</hibernate-mapping>
