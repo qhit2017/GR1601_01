@@ -1,0 +1,62 @@
+td{
+	/*margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 10px;*/
+	border: 1px #0000cc solid;
+
+}
+.tk1{
+	width: 100%;
+	height: 900px;
+	position: absolute;
+}
+.tk2{
+	width: 400px;
+	height: 450px;
+
+}
+.tk3{
+	width: 20%;
+	height: 30px;
+
+}
+.kkml{
+	border-bottom: 1px #0000cc solid;
+
+}
+.kkml2{
+	width: 100%;
+	height: 10px;
+	top: 70px;
+	/* background-color: #0000cc;*/
+	position: absolute;
+}
+.kkml3{
+	width: 100%;
+	height: 900px;
+	position: absolute;
+}
+.kkml4{
+	width: 100%;
+	height: 30px;
+	position: absolute;
+}
+.kkml5{
+	width: 100%;
+	height: 30px;
+	top: 30px;
+	position: absolute;
+}
+.kkml6{
+	width: 400px;
+	height: 300px;
+	top: 90px;
+	border-top: 2px #0000cc solid ;
+	border-bottom: 2px #0000cc solid;
+	position: absolute;
+}
+.kkml17{
+	position: absolute;
+	top: 500px;
+}
