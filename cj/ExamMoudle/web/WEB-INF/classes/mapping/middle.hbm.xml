@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--   班级-->
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.cj.Bean.Middle" table="middle" >
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="mid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="mid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+
+
+
+    </class>
+</hibernate-mapping>

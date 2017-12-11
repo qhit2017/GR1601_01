@@ -1,0 +1,30 @@
+#student_main{
+    width:100%;
+
+}
+
+#student_l{
+
+    width:50%;
+    height:300px;
+
+    position: absolute;
+}
+
+
+#student_r{
+
+    width:50%;
+    height:300px;
+    position: relative;;
+
+
+
+}
+
+#student_die{
+
+    width:100%;
+    height: 300px;
+
+}

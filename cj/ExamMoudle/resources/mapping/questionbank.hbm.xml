@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--   班级-->
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.cj.Bean.Questionbank" table="questionbank" >
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="qid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="qid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="suid" type="java.lang.Integer">
+            <column name="suid"/>
+        </property>
+
+        <property name="qchapter" type="java.lang.String">
+            <column name="qchapter"/>
+        </property>
+        <property name="qtype" type="java.lang.Integer">
+        <column name="qtype"/>
+    </property>
+
+        <property name="qcontent" type="java.lang.String">
+            <column name="qcontent"/>
+        </property>
+        <property name="qa" type="java.lang.String">
+            <column name="qa"/>
+        </property>
+        <property name="qb" type="java.lang.String">
+            <column name="qb"/>
+        </property>
+        <property name="qc" type="java.lang.String">
+            <column name="qc"/>
+        </property>
+        <property name="qd" type="java.lang.String">
+            <column name="qd"/>
+        </property>
+
+        <property name="qanswer" type="java.lang.String">
+            <column name="qanswer"/>
+        </property>
+
+        <property name="qdifficulty" type="java.lang.String">
+            <column name="qdifficulty"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>
