@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.jinmengjie.bean.Students" table="students">
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+ <!--学生id-->
+        <id name="sid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="sid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+<!--学号-->
+        <property name="snumber" type="java.lang.String">
+            <!--数据库  表中列中的列名-->
+            <column name="snumber"></column>
+        </property>
+<!--姓名-->
+        <property name="sname" type="java.lang.String">
+            <column name="sname"></column>
+        </property>
+<!--性别-->
+        <property name="ssex" type="java.lang.String">
+            <column name="ssex"></column>
+        </property>
+<!--入学年份-->
+        <property name="senter" type="java.lang.String">
+            <column name="senter"></column>
+        </property>
+<!--生日-->
+        <property name="sbirthday" type="java.lang.String">
+            <column name="sbirthday"></column>
+        </property>
+<!--省份证号-->
+        <property name="sidnumber" type="java.lang.String">
+            <column name="sidnumber"></column>
+        </property>
+<!--省份-->
+        <property name="sprovince" type="java.lang.String">
+            <column name="sprovince"></column>
+        </property>
+<!--专业简称-->
+        <property name="smahor" type="java.lang.String">
+            <column name="smahor"></column>
+        </property>
+<!--联系电话-->
+        <property name="stel" type="java.lang.String">
+            <column name="stel"></column>
+        </property>
+<!--家长电话-->
+        <property name="sptel" type="java.lang.String">
+            <column name="sptel"></column>
+        </property>
+ <!--宿舍-->
+        <property name="sdormitory" type="java.lang.String">
+            <column name="sdormitory"></column>
+        </property>
+ <!--政治面貌-->
+        <property name="spolitics" type="java.lang.String">
+            <column name="spolitics"></column>
+        </property>
+<!--城市-->
+        <property name="scity" type="java.lang.String">
+            <column name="scity"></column>
+        </property>
+<!--就读方向-->
+        <property name="sattend" type="java.lang.String">
+            <column name="sattend"></column>
+        </property>
+<!--家庭住址-->
+        <property name="saddress" type="java.lang.String">
+            <column name="saddress"></column>
+        </property>
+<!--监护人关系-->
+        <property name="srelation" type="java.lang.String">
+        <column name="srelation"></column>
+        </property>
+<!--基本情况-->
+        <property name="sbasicinfo" type="java.lang.String">
+            <column name="sbasicinfo"></column>
+        </property>
+<!--宿舍号-->
+        <property name="sdnumber" type="java.lang.Integer">
+            <column name="sdnumber"></column>
+        </property>
+<!--教育背景-->
+        <property name="seducation" type="java.lang.String">
+            <column name="seducation"></column>
+        </property>
+<!--照片-->
+        <property name="sphoto" type="java.lang.String">
+            <column name="sphoto"></column>
+        </property>
+<!--登录密码-->
+        <property name="spassword" type="java.lang.String">
+            <column name="spassword"></column>
+        </property>
+<!--角色-->
+        <property name="srole" type="java.lang.Integer">
+            <column name="srole"></column>
+        </property>
+
+
+        <many-to-one name="cid" class="com.jinmengjie.bean.Classes" column="cid" fetch="join" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>
