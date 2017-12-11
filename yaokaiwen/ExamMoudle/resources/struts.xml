@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <package name="default" namespace="/" extends="json-default"><!--json-default-->
+<!--====================登录===========================================================-->
+        <action name="*" class="com.yaokaiwen.controller.LoginController" method="{1}">
+            <result name="login">login.jsp</result>
+            <result name="index">teacherlist.jsp</result>
+            <result name="teacherlist">teacherlist.jsp</result>
+            <result name="onlinetest">onlinetest.jsp</result>
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+            <result name="jsonpage" type="json">
+                <param name="root">jsonpage</param>
+            </result>
+        </action>
+
+        <action name="selectteachersinfo" class="com.yaokaiwen.controller.TeachersController" method="selectteachersinfo">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="generatetnumber" class="com.yaokaiwen.controller.TeachersController" method="generatetnumber">
+            <result name="gtnumber" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="insertOrUpdateTeachers" class="com.yaokaiwen.controller.TeachersController" method="insertOrUpdateTeachers" >
+            <result name="insertOrUpdateTeachers"  type="redirect">teacherlist.jsp</result>
+        </action>
+
+        <action name="editteacherinfo" class="com.yaokaiwen.controller.TeachersController" method="editteacherinfo">
+            <result name="editteacherinfo" type="json">
+                <param name="root">teachers</param>
+            </result>
+        </action>
+
+        <action name="resetpwd" class="com.yaokaiwen.controller.TeachersController" method="resetpwd">
+            <result name="resetpwd" type="json">
+                <param name="root"></param>
+            </result>
+        </action>
+
+        <action name="delectteacher" class="com.yaokaiwen.controller.TeachersController" method="delectteacher">
+            <result name="delectteacher" type="json">
+                <param name="root"></param>
+            </result>
+        </action>
+
+        <action name="selectclassesallinfo" class="com.yaokaiwen.controller.ClassesController" method="selectclassesallinfo">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="getPage" class="com.yaokaiwen.controller.ClassesController" method="getPage">
+            <result name="jsonpage" type="json">
+                <param name="root">jsonpage</param>
+            </result>
+        </action>
+
+        <action name="selecttidltname" class="com.yaokaiwen.controller.ClassesController" method="selecttidltname">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="selecttidhtname" class="com.yaokaiwen.controller.ClassesController" method="selecttidhtname">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="selectcbegin" class="com.yaokaiwen.controller.ClassesController" method="selectcbegin">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="selectclassesinfo" class="com.yaokaiwen.controller.ClassesController" method="selectclassesinfo">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="selectbycid" class="com.yaokaiwen.controller.ClassesController" method="selectbycid">
+            <result name="selectbycid" type="json">
+                <param name="root">classes</param>
+            </result>
+        </action>
+        <action name="insertorupdateclasses" class="com.yaokaiwen.controller.ClassesController" method="insertorupdateclasses" >
+        <result name="classlist"  type="redirect">classlist.jsp</result>
+        </action>
+        <action name="selectstudentsallinfo" class="com.yaokaiwen.controller.StudentController" method="selectstudentsallinfo">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name= "selectstudentinfo" class="com.yaokaiwen.controller.StudentController" method="selectstudentinfo">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="selectbysid" class="com.yaokaiwen.controller.StudentController" method="selectbysid">
+            <result name="selectbysid" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="insertorupdatestudents" class="com.yaokaiwen.controller.StudentController" method="insertorupdatestudents" >
+            <result name="studentlist">studentlist.jsp</result>
+        </action>
+        <action name="delectstudent" class="com.yaokaiwen.controller.StudentController" method="delectstudent">
+            <result name="delectstudent">studentlist.jsp</result>
+        </action>
+        <action name="resetpwd" class="com.yaokaiwen.controller.StudentController" method="resetpwd">
+            <result name="resetpwd" type="json">
+                <param name="root"></param>
+            </result>
+        </action>
+        <action name="selectcid" class="com.yaokaiwen.controller.StudentController" method="selectcid">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="getpage" class="com.yaokaiwen.controller.StudentController" method="getpage">
+            <result name="jsonpage" type="json">
+                <param name="root">jsonpage</param>
+            </result>
+        </action>
+        <action name="uploadimg" class="com.yaokaiwen.controller.StudentController" method="uploadimg">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+        <action name="filedown" class="com.yaokaiwen.controller.FileDownController" method="filedown">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms_excel</param>
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="buffersize">4096</param>
+            </result>
+        </action>
+        <action name="filedownstudent" class="com.yaokaiwen.controller.StudnetFileDownController" method="filedownstudent">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms_excel</param>
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="buffersize">4096</param>
+            </result>
+        </action>
+        <action name="uploadfileup" class="com.yaokaiwen.controller.StudnetFileDownController" method="uploadfileup">
+            <result name="jsonstring"></result>
+        </action>
+
+        <action name="selectsubject" class="com.yaokaiwen.controller.QuestionbankController" method="selectsubject">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="selectquestionnumber" class="com.yaokaiwen.controller.QuestionbankController" method="selectquestionnumber">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="selectquestionbysuid" class="com.yaokaiwen.controller.QuestionbankController" method="selectquestionbysuid">
+            <result name="selectquestionbysuid">pfwrittentestlist.jsp</result>
+        </action>
+
+        <action name="selectquestion" class="com.yaokaiwen.controller.QuestionbankController" method="selectquestion">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="uploadfilequestion" class="com.yaokaiwen.controller.QuestionbankController" method="uploadfilequestion">
+            <result name="jsonstring"></result>
+        </action>
+
+        <action name="insertquestion" class="com.yaokaiwen.controller.QuestionbankController" method="insertquestion">
+            <result name="insertquestion">pfwrittentestlist.jsp</result>
+        </action>
+
+        <action name="selecttestpaper" class="com.yaokaiwen.controller.TestpaperController" method="selecttestpaper">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="selectquestionid" class="com.yaokaiwen.controller.TestpaperController" method="selectquestionid">
+            <result name="jsonstring" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <action name="choiceinsertpaper" class="com.yaokaiwen.controller.TestpaperController" method="choiceinsertpaper">
+            <result name="choiceinsertpaper">examlist.jsp</result>
+        </action>
+
+        <action name="randominsertpaper" class="com.yaokaiwen.controller.TestpaperController" method="randominsertpaper">
+            <result name="randominsertpaper">examlist.jsp</result>
+        </action>
+    </package>
+</struts>

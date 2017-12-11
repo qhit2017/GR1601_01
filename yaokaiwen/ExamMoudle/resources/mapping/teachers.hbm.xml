@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.yaokaiwen.bean.Teachers"  table="teachers" >
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+ <!--教师id-->
+        <id name="tid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="tid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+<!--编号-->
+        <property name="tnumber" type="java.lang.String">
+            <!--数据库  表中列中的列名-->
+            <column name="tnumber"></column>
+        </property>
+<!--姓名-->
+        <property name="tname" type="java.lang.String">
+            <column name="tname"></column>
+        </property>
+<!--性别-->
+        <property name="tsex" type="java.lang.String">
+            <column name="tsex"></column>
+        </property>
+<!--生日-->
+        <property name="tbirthday" type="java.lang.String">
+            <column name="tbirthday"></column>
+        </property>
+<!--学历-->
+        <property name="teducation" type="java.lang.String">
+            <column name="teducation"></column>
+        </property>
+<!--联系电话-->
+        <property name="ttel" type="java.lang.String">
+            <column name="ttel"></column>
+        </property>
+<!--岗位-->
+        <property name="tjob" type="java.lang.Integer">
+            <column name="tjob"></column>
+        </property>
+<!--登录密码-->
+        <property name="tpassword" type="java.lang.String">
+            <column name="tpassword" ></column>
+        </property>
+<!--角色-->
+        <property name="trole" type="java.lang.Integer">
+            <column name="trole"></column>
+        </property>
+<!--备注-->
+        <property name="tremark" type="java.lang.String">
+            <column name="tremark"></column>
+        </property>
+    </class>
+</hibernate-mapping>
