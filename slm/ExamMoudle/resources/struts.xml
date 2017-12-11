@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <!--设置上传文件限制大小-->
+   <!-- <constant name="struts.multipart.maxSize" value="10240"></constant>-->
+    <package name="default" namespace="/" extends="json-default">
+       <!-- 登录-->
+        <action name="text" class="com.chengshuai.controller.loginController" method="text">
+            <result name="allre" type="json">
+                <param name="root">loginlo</param>
+            </result>
+        </action>
+        <!--教师模块-->
+    <action name="selecrTeachersAll" class="com.chengshuai.controller.TeachersContriller" method="selecrTeachersAll">
+        <result name="selectTeachers" type="json">
+            <param name="root">teachersinfo</param>
+        </result>
+</action>
+ <action name="selectByid" class="com.chengshuai.controller.TeachersContriller" method="selectByid">
+            <result name="selectTeachers" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+    </action>
+        <action name="selectBytnumberOrtname" class="com.chengshuai.controller.TeachersContriller" method="selectBytnumberOrtname">
+            <result name="selectTeachers" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+        <action name="saveTeachers" class="com.chengshuai.controller.TeachersContriller" method="saveTeachers">
+            <result name="selectTeachers" type="json">
+                <param name="root">teachersinfo</param>
+            </result>
+        </action>
+
+
+        <action name="getpage" class="com.chengshuai.controller.TeachersContriller" method="getpage">
+            <result name="teajson" type="json">
+                <param name="root">teajson</param>
+            </result>
+        </action>
+        <action name="saveTeachersByTnumber" class="com.chengshuai.controller.TeachersContriller" method="saveTeachersByTnumber">
+        <result name="teajson" type="json">
+            <param name="root">teajson</param>
+        </result>
+    </action>
+        <action name="deleteteachers" class="com.chengshuai.controller.TeachersContriller" method="deleteteachers">
+            <result name="teajson" type="json">
+                <param name="root">teajson</param>
+            </result>
+        </action>
+        <!--班级模块-->
+        <!--查询班级所有信息-->
+        <action name="QueryClassesall" class="com.chengshuai.controller.ClassesController" method="QueryClassesall">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+        <!--查询班主任名字-->
+        <action name="QueryTeachersTjob0" class="com.chengshuai.controller.ClassesController" method="QueryTeachersTjob0">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+        <!--查询讲师名字-->
+        <action name="QueryTeachersTjob1" class="com.chengshuai.controller.ClassesController" method="QueryTeachersTjob1">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+       <!-- 根据条件查询班级表-->
+        <action name="QueryconditionClasses" class="com.chengshuai.controller.ClassesController" method="QueryconditionClasses">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+       <!-- 添加或修改班级表-->
+        <action name="saveOrupdateClasses" class="com.chengshuai.controller.ClassesController" method="saveOrupdateClasses">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+        <!--根据ID查询班级表-->
+        <action name="QueryClassesByid" class="com.chengshuai.controller.ClassesController" method="QueryClassesByid">
+            <result name="classesjson" type="json">
+                <param name="root">classesjson</param>
+            </result>
+        </action>
+        <!--学生管理界面 -->
+        <!--上传文件-->
+        <action name="uploadStudent" class="com.chengshuai.controller.StudentController" method="uploadStudent">
+            <result name="studentjson" type="json">
+                <param name="root">studentjson</param>
+            </result>
+        </action>
+        <!--查询学生表中所有信息-->
+        <action name="QueryStudentsAll" class="com.chengshuai.controller.StudentController" method="QueryStudentsAll">
+            <result name="studentjson" type="json">
+                <param name="root">studentjson</param>
+            </result>
+        </action>
+       <!-- 根据条件查询学生表中的数据-->
+        <action name="QueryAndtiaojian" class="com.chengshuai.controller.StudentController" method="QueryAndtiaojian">
+            <result name="studentjson" type="json">
+                <param name="root">studentjson</param>
+            </result>
+        </action>
+   <!-- 添加或者修改-->
+        <action name="saveORupdateStudents" class="com.chengshuai.controller.StudentController" method="saveORupdateStudents">
+            <result name="studentjson" type="json">
+                <param name="root">studentjson</param>
+            </result>
+        </action>
+            <!--根据ID查询数据库-->
+        <action name="QueryId" class="com.chengshuai.controller.StudentController" method="QueryId">
+        <result name="studentjson" type="json">
+            <param name="root">studentjson</param>
+        </result>
+    </action>
+
+            <!--下载控制器-->
+<action name="xiazai" class="com.chengshuai.controller.ExportController" method="xiazai">
+            <result name="secces" type="stream">
+                <!--inputstream对应控制器中的inputstream-->
+                <param name="inputName">inputStream</param>
+                <!--设置下载文件格式-->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">attachment;fileName="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+
+        <!--上传文件-->
+        <action name="Importbiaoge" class="com.chengshuai.controller.ImportController" method="Importbiaoge">
+            <result name="studentjson" type="json">
+                <param name="root">studentjson</param>
+            </result>
+        </action>
+
+
+        <!--下载控制器-->
+        <action name="Download" class="com.chengshuai.controller.DownloadController" method="Download">
+            <result name="secces" type="stream">
+                <!--inputstream对应控制器中的inputstream-->
+                <param name="inputName">inputStream</param>
+                <!--设置下载文件格式-->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">attachment;fileName="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+
+
+        <!--查询题库所有-->
+        <action name="Queryquestionbankall" class="com.chengshuai.controller.QuestionbankController" method="Queryquestionbankall">
+        <result name="questionbankjson" type="json">
+            <param name="root">questionbankjson</param>
+        </result>
+    </action>
+        <!--阶段方向查询数据库-->
+        <action name="SubjectsudirectionAndsustage" class="com.chengshuai.controller.QuestionbankController" method="SubjectsudirectionAndsustage">
+            <result name="questionbankjson" type="json">
+                <param name="root">questionbankjson</param>
+            </result>
+        </action>
+
+
+        <!--计算题库中的数据-->
+        <action name="Questionbanknumber" class="com.chengshuai.controller.QuestionbankController" method="Questionbanknumber">
+            <result name="questionbankjson" type="json">
+                <param name="root">questionbankjson</param>
+            </result>
+        </action>
+
+        <!--根据条件查询数据库中的数据-->
+        <action name="Questionbanknqeruyid" class="com.chengshuai.controller.QuestionbankController" method="Questionbanknqeruyid">
+            <result name="questionbankjson" type="json">
+                <param name="root">questionbankjson</param>
+            </result>
+        </action>
+    </package>
+
+</struts>
