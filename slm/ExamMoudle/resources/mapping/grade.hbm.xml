@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.chengshuai.bean.Grade" table="grade">
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+ <!--成绩id-->
+        <id name="gid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="gid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+<!--分数-->
+        <property name="gscore" type="java.lang.Integer">
+            <!--数据库  表中列中的列名-->
+            <column name="gscore"></column>
+        </property>
+<!--学生答案-->
+        <property name="ganswer" type="java.lang.String">
+            <column name="ganswer"></column>
+        </property>
+<!--结束时间-->
+        <property name="gendtime" type="java.util.Calendar">
+            <column name="gendtime"></column>
+        </property>
+
+    </class>
+</hibernate-mapping>
