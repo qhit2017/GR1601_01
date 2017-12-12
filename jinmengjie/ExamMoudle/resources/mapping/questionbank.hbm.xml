@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.jinmengjie.bean.Questionbank" table="questionbank">
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+        <!--题库id-->
+        <id name="qid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="qid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+        <!--对应章节-->
+        <property name="qchapter" type="java.lang.String">
+            <!--数据库  表中列中的列名-->
+            <column name="qchapter"></column>
+        </property>
+        <!--类型-->
+        <property name="qtype" type="java.lang.Integer">
+            <column name="qtype"></column>
+        </property>
+        <!--题目内容-->
+        <property name="qcontent" type="java.lang.String">
+            <column name="qcontent"></column>
+        </property>
+        <!--选项A-->
+        <property name="qa" type="java.lang.String">
+            <column name="qa"></column>
+        </property>
+        <!--选项B-->
+        <property name="qb" type="java.lang.String">
+            <column name="qb"></column>
+        </property>
+        <!--选项C-->
+        <property name="qc" type="java.lang.String">
+            <column name="qc"></column>
+        </property>
+        <!--选项D-->
+        <property name="qd" type="java.lang.String">
+            <column name="qd"></column>
+        </property>
+        <!--答案-->
+        <property name="qanswer" type="java.lang.String">
+            <column name="qanswer"></column>
+        </property>
+        <!--难度-->
+        <property name="qdifficulty" type="java.lang.String">
+            <column name="qdifficulty"></column>
+        </property>
+
+        <many-to-one name="suid" class="com.jinmengjie.bean.Subject"
+                     column="suid" lazy="false" fetch="join"></many-to-one>
+    </class>
+</hibernate-mapping>
