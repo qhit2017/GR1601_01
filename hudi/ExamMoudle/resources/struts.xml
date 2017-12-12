@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <!--<constant name="struts.multipart.maxSize" value=""></constant>-->
+
+
+    <package name="default" namespace="/" extends="json-default">
+        <action name="addTeachers" class="com.chengshuai.controller.TeachersController" method="addTeachers">
+            <result name="jsonresult">index.jsp</result>
+        </action>
+
+
+        <action name="login" class="com.chengshuai.controller.LoginController" method="login">
+            <result name="success">index.jsp</result>
+            <result name="fail">login.jsp</result>
+        </action>
+
+
+        <action name="showteacherlist" class="com.chengshuai.controller.TeachersController" method="showteacherlist">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+        <action name="addteacher" class="com.chengshuai.controller.TeachersController" method="addteacher">
+            <result name="addtecher">addTeacher.jsp</result>
+        </action>
+
+
+        <action name="queryJob0" class="com.chengshuai.controller.TeachersController" method="queryJob0">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+
+        <action name="queryJob1" class="com.chengshuai.controller.TeachersController" method="queryJob1">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+
+        <action name="uploadImg" class="com.chengshuai.controller.StudentController" method="uploadImg">
+            <result name="success" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+        <action name="filedown" class="com.chengshuai.controller.FileDownController" method="filedown">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+
+        </action>
+
+
+        <action name="teacherdown" class="com.chengshuai.controller.TeacherDown" method="teacherdown">
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">
+                    attachment;filename="${filename}"
+                </param>
+                <param name="bufferSize">4096</param>
+            </result>
+
+        </action>
+
+        <action name="createTestPaper" class="com.chengshuai.controller.TestPaperController" method="createTestPaper">
+            <result name="success">index.jsp</result>
+        </action>
+
+
+    </package>
+</struts>
