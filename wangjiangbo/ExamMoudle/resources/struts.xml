@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <package name="default" namespace="/" extends="json-default">
+        <!--登录配置-->
+        <action name="*" class="com.jiang.controller.LoginController" method="{1}">
+            <result name="login">login.jsp</result>
+            <result name="main">main.jsp</result>
+            <result name="teachers">teachers.jsp</result>
+            <result name="students">students.jsp</result>
+        </action>
+
+        <!--显示老师信息配置-->
+        <action name="showteachersinfo" class="com.jiang.controller.ShowTeachersInfoController" method="showteachers">
+            <result name="success" type="json">
+               <param name="root">jsonstr</param>
+            </result>
+        </action>
+
+        <!--查询老师信息-->
+        <action name="selectteachers" class="com.jiang.controller.ShowTeachersInfoController" method="selectteachers">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+
+        <!--根据id 显示tnumber-->
+        <action name="insertnumber" class="com.jiang.controller.ShowTeachersInfoController" method="insertnumber">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!--添加老师-->
+        <action name="insertteachers" class="com.jiang.controller.InsertTeachersInfoController" method="insertteachers">
+            <result name="success">teachers.jsp</result>
+        </action>
+        <!--上传配置-->
+        <action name="uploadImg" class="com.jiang.controller.InsertStudentsController" method="uploadImg">
+            <result name="success" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+        <!--编辑老师信息配置-->
+        <action name="editteachers" class="com.jiang.controller.ShowTeachersInfoController" method="editteachers">
+            <result name="editteachers">elseteachers.jsp</result>
+        </action>
+
+        <!--修改编辑老师信息配置-->
+        <action name="update" class="com.jiang.controller.ShowTeachersInfoController" method="update">
+            <result name="teachers">elseteachers.jsp</result>
+        </action>
+
+
+    </package>
+
+</struts>
