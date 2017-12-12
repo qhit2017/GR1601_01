@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.zhanglong.bean.Testpaper" table="testpaper">
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+        <!--试卷id-->
+        <id name="tid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="tid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+        <!--类型-->
+        <property name="ttype" type="java.lang.String">
+            <!--数据库  表中列中的列名-->
+            <column name="ttype"></column>
+        </property>
+        <!--标题-->
+        <property name="ttitle" type="java.lang.String">
+            <column name="ttitle"></column>
+        </property>
+        <!--考试时间-->
+        <property name="ttime" type="java.lang.String">
+            <column name="ttime"></column>
+        </property>
+        <!--状态-->
+        <property name="tstate" type="java.lang.String">
+            <column name="tstate"></column>
+        </property>
+        <!--总题数-->
+        <property name="tsum" type="java.lang.Integer">
+            <column name="tsum"></column>
+        </property>
+        <!--每题分数-->
+        <property name="teachscore" type="java.lang.Integer">
+            <column name="teachscore"></column>
+        </property>
+        <!--班级-->
+        <property name="cname" type="java.lang.String">
+            <column name="cname"></column>
+        </property>
+
+
+        <many-to-one name="subject" class="com.zhanglong.bean.Subject" column="suid" fetch="join" lazy="false"></many-to-one>
+
+        <!--与questionbank题库的关系           inverse是否进行反转   false不进行反转，自身维护-->
+        <set name="questionbankSet" table="middle" lazy="false" >
+            <key column="tid"></key>
+            <many-to-many class="com.zhanglong.bean.Questionbank" column="qid"></many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>
