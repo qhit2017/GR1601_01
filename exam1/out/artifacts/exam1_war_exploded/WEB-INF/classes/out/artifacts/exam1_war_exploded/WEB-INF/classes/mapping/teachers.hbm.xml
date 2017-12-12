@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.xuhaoyu.bean.Teachers" table="teachers">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="tid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="tid"/>
+            <!-- 自增-->
+            <generator class="native"></generator>
+        </id>
+
+        <!--其他属性-->
+        <property name="tnumber" type="java.lang.String">
+            <column name="tnumber"/>
+        </property>
+        <property name="tname" type="java.lang.String">
+            <column name="tname"/>
+        </property>
+        <property name="tsex" type="java.lang.String">
+            <column name="tsex"/>
+        </property>
+        <property name="tbirthday" type="java.lang.String">
+            <column name="tbirthday"/>
+        </property>
+        <property name="tphone" type="java.lang.String">
+            <column name="tphone"/>
+        </property>
+        <property name="ttel" type="java.lang.String">
+            <column name="ttel"/>
+        </property>
+
+        <property name="tjob" type="java.lang.Integer">
+            <column name="tjob"/>
+        </property>
+
+        <property name="tpassword" type="java.lang.String">
+            <column name="tpassword"/>
+        </property>
+
+        <property name="trole" type="java.lang.Integer">
+            <column name="trole"/>
+        </property>
+        <property name="tremark" type="java.lang.String">
+            <column name="tremark"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
