@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--     new bean类的名字                 table 表的名字    schema sql 数据库特有的标志-->
+    <class name="com.yanlihua.bean.Classes" table="classes">
+        <!--主键 name bean类的属性名字 type bean类的数据类型-->
+ <!--班级id-->
+        <id name="cid" type="java.lang.Integer">
+            <!--数据库 表中列的列名-->
+            <column name="cid"></column>
+            <!--自增的方式 class="native"（这是数据库自增）-->
+            <generator class="native"></generator>
+        </id>
+        <!--其他属性-->
+        <!--实体bean中的属性名   type bean类的数据类型 -->
+<!--班级代号-->
+        <property name="cnumber" type="java.lang.String">
+            <!--数据库  表中列中的列名-->
+            <column name="cnumber"></column>
+        </property>
+<!--班级名称-->
+        <property name="cname" type="java.lang.String">
+            <column name="cname"></column>
+        </property>
+<!--所属方向-->
+        <property name="cdirection" type="java.lang.String">
+            <column name="cdirection"></column>
+        </property>
+<!--开班日期-->
+        <property name="cbegin" type="java.lang.String">
+            <column name="cbegin"></column>
+        </property>
+<!--G1开班人数-->
+        <property name="cg1" type="java.lang.Integer">
+            <column name="cg1"></column>
+        </property>
+<!--G2开班人数-->
+        <property name="cg2" type="java.lang.Integer">
+            <column name="cg2"></column>
+        </property>
+<!--G3开班人数-->
+        <property name="cg3" type="java.lang.Integer">
+            <column name="cg3"></column>
+        </property>
+<!--状态-->
+        <property name="cstate" type="java.lang.Integer">
+            <column name="cstate"></column>
+        </property>
+<!--备注-->
+        <property name="cremark" type="java.lang.String">
+            <column name="cremark"></column>
+        </property>
+
+        <!--关系-->
+        <!--tidl   tidh  这个是class中的列对应的关系-->
+        <many-to-one name="teachersh" class="com.yanlihua.bean.Teachers" column="tidh" fetch="join"  lazy="false"></many-to-one>
+        <many-to-one name="teachersl" class="com.yanlihua.bean.Teachers"  column="tidl" fetch="join" lazy="false"></many-to-one>
+
+        <!--从班级写班级与学生的关系-->
+        <!--<set name="studentsSet" lazy="false" fetch="join" >
+            &lt;!&ndash;自身的主键，它表的外键&ndash;&gt;
+            <key column="cid"></key>
+            <one-to-many class="com.yanlihua.bean.Students"></one-to-many>
+        </set>-->
+    </class>
+
+
+</hibernate-mapping>
