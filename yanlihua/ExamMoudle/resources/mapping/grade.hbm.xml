@@ -33,7 +33,7 @@
         </property>
 <!--多个成绩对应一个学生-->
         <many-to-one name="students" class="com.yanlihua.bean.Students" column="sid" lazy="false" fetch="join"></many-to-one>
-    <!--    <many-to-one name="testpaper" class="com.yanlihua.bean.Testpaper" column="tid" lazy="false" fetch="join"></many-to-one>
-    -->
+
+            <many-to-one name="testpaper" class="com.yanlihua.bean.Testpaper" column="tid" lazy="false" fetch="select"></many-to-one>
     </class>
 </hibernate-mapping>

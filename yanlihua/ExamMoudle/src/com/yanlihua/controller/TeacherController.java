@@ -121,14 +121,23 @@ public class TeacherController extends ActionSupport implements ModelDriven {
         //-----------以上有问题
         /*Integer id=Integer.parseInt(tid);*/
         Integer id = allteachers.getTid();
+        System.out.println("22222222222222222-"+allteachers.getTid());
         Teachers teachers = teachersService.selectTeachersInfoByTidTeacherService(id);
         teachers.setTtel(allteachers.getTtel());
+        System.out.println(allteachers.getTtel());
         teachers.setTbirthday(allteachers.getTbirthday());
+        System.out.println(allteachers.getTbirthday());
         teachers.setTedu(allteachers.getTedu());
+        System.out.println(allteachers.getTedu());
         teachers.setTname(allteachers.getTname());
+        System.out.println(allteachers.getTname());
         teachers.setTremark(allteachers.getTremark());
+        System.out.println(allteachers.getTremark());
         teachers.setTsex(allteachers.getTsex());
+        System.out.println(allteachers.getTsex());
         teachers.setTjob(allteachers.getTjob());
+        System.out.println(allteachers.getTjob());
+
         teachersService.saveOrUpdateTeachersInfoTeacherService(teachers);
         jsonObject.put("result", "true");
         teacherInfo = jsonObject.toString();
@@ -181,7 +190,9 @@ public class TeacherController extends ActionSupport implements ModelDriven {
     //保存教师信息
     public String saveteacherway() {
         allteachers.setTpassword("123456");
+        System.out.println("22222222222222222222223"+allteachers.getTid());
         teachersService.saveOrUpdateTeachersInfoTeacherService(allteachers);
+        System.out.println(allteachers.getTnumber()+","+allteachers.getTname());
         jsonObject.put("result", "true");
         teacherInfo = jsonObject.toString();
         return "savewaysuccess";

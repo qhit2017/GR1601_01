@@ -106,7 +106,16 @@ public class ExamController extends ActionSupport implements ModelDriven {
         examinfo = jsonObject.toString();
         return "saveinfointogradewayresult";
     }
-
+//结束考试更改状态
+    public String changetstateway(){
+        //examService.
+        HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(StrutsStatics.HTTP_REQUEST);
+        request.getAttribute("tid");
+        //examService.updatetestpapertstateExamService(testpaper,testpaper.getTid());
+        jsonObject.put("result", "true");
+        examinfo = jsonObject.toString();
+        return "changetstatewayresult";
+    }
     public String getGbegintime() {
         return gbegintime;
     }

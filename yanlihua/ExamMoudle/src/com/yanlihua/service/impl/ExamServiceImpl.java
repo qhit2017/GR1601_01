@@ -133,4 +133,10 @@ public class ExamServiceImpl implements ExamService {
         examDao.updateGradeExamDao(grade);
         return;
     }
+
+    @Override
+    public void updatetestpapertstateExamService(Testpaper testpaper, Integer tid) {
+        examDao.updatetestpapertstateExamDao(testpaper, tid);
+        return;
+    }
 }

@@ -236,4 +236,17 @@ public class ExamDaoImpl implements ExamDao {
         transaction.commit();
         HibernateUtil.close(session);
     }
+
+    @Override
+    public void updatetestpapertstateExamDao(Testpaper testpaper,Integer tid) {
+        Session session = HibernateUtil.getSession();
+        if (session==null){
+            return ;
+        }
+        Transaction transaction=session.beginTransaction();
+        testpaper.setTstate("考试结束");
+        session.saveOrUpdate(testpaper);
+        transaction.commit();
+        HibernateUtil.close(session);
+    }
 }

@@ -105,7 +105,9 @@
         </property>
 
         <many-to-one name="classes" class="com.yanlihua.bean.Classes" column="cid" fetch="join" lazy="false" ></many-to-one>
-<!--学生与成绩的关系-->
+
+
+        <!--学生与成绩的关系-->
         <!--<set name="gradeSet" lazy="false" fetch="join" >
             <key column="sid"></key>
             <one-to-many class="com.yanlihua.bean.Grade"></one-to-many>
