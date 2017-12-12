@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="action"></constant>
+    <!--<constant name="struts.action.extension" value="action" />-->
+    <package name="default" namespace="/" extends="json-default">
+
+        <!--登录的配置-->
+        <action name="login" class="com.chengshuai.controller.LoginController" method="login">
+            <result name="ok">main.jsp</result>
+            <result name="error">error.jsp</result>
+
+        </action>
+
+
+
+        <!--;显示教师信息的配置-->
+
+        <action name="showteacherinfo" class="com.chengshuai.controller.MessageController" method="showteacherinfo">
+
+            <result name="showsuccess" type="json">
+            <param name="root">jsonresult</param>
+
+            </result>
+        </action>
+
+
+       <!-- 根据条件查询的配置-->
+
+
+        <action name="SelectMessage" class="com.chengshuai.controller.SelectMessageController" method="SelectMessage">
+
+            <result name="showsuccess" type="json">
+                <param name="root">jsonresult</param>
+
+            </result>
+        </action>
+
+
+       <!-- 添加的配置-->
+
+        <!--登录的配置-->
+        <action name="insertteacherinfo" class="com.chengshuai.controller.InsertTeacherController" method="insertteacherinfo">
+            <result name="test">test.jsp</result>
+
+        </action>
+
+        <!--删除的配置-->
+
+        <action name="deleteteacher" class="com.chengshuai.controller.DelectTeacherController" method="deleteteacher">
+            <result name="test">test.jsp</result>
+
+        </action>
+
+
+
+
+        <!-- &lt;!&ndash;显示教师信息的配置&ndash;&gt;
+         <action name="showteacherinfo" class="com.zhangerhui.controller.TeacherController" method="showteacherinfo">
+             <result name="showsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash;查询后教师信息的配置&ndash;&gt;
+         <action name="showteacherbyThree" class="com.zhangerhui.controller.TeacherController"
+                 method="showteacherbyThree">
+             <result name="showthreesuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash;生成标号的配置&ndash;&gt;
+         <action name="getnumber" class="com.zhangerhui.controller.TeacherController" method="getnumber">
+             <result name="getsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash; 添加的配置&ndash;&gt;
+         <action name="insertteacher" class="com.zhangerhui.controller.TeacherController" method="insertteacher">
+             <result name="insertsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash; 取消删除的配置&ndash;&gt;
+         <action name="cancelteacher" class="com.zhangerhui.controller.TeacherController" method="cancelteacher">
+             <result name="cancelsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash; 编辑教师的配置&ndash;&gt;
+         <action name="editteacher" class="com.zhangerhui.controller.TeacherController" method="editteacher">
+             <result name="editsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         <action name="editsaveteacher" class="com.zhangerhui.controller.TeacherController" method="editsaveteacher">
+             <result name="savesuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+          &lt;!&ndash;重置教师密码的配置&ndash;&gt;
+         <action name="reteacherpwd" class="com.zhangerhui.controller.TeacherController" method="reteacherpwd">
+             <result name="repwdsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+         &lt;!&ndash; 删除教师的配置&ndash;&gt;
+        <action name="deleteteacher" class="com.zhangerhui.controller.TeacherController" method="deleteteacher">
+             <result name="deletesuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+
+         &lt;!&ndash;显示班级信息的配置&ndash;&gt;
+         <action name="showclassesinfo" class="com.zhangerhui.controller.ClassesController" method="showclassesinfo">
+             <result name="showsuccess" type="json">
+                 <param name="root">jsonresult</param>
+             </result>
+         </action>
+
+ -->
+    </package>
+</struts>

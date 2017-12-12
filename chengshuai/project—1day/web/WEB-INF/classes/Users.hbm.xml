@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.chengshuai.bean.users" table="users" schema="dbo">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="uid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="uid" />
+            <!-- 自增-->
+            <generator class="native"></generator>
+        </id>
+
+        <!--其他属性-->
+        <property name="uname" type="java.lang.String">
+            <column name="uname"/>
+        </property>
+
+        <property name="upassword" type="java.lang.String">
+            <column name="upassword"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>
