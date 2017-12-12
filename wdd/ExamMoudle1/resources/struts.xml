@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <package name="default" namespace="/" extends="json-default">
+        <!--登陆显示-->
+        <action name="*" class="com.wangdoudou.controller.LoginController" method="{1}">
+            <result name="success" type="json">
+                <param name="root">login</param>
+            </result>
+
+        </action>
+       <!--教师显示-->
+        <action name="show" class="com.wangdoudou.controller.TeachersController" method="show">
+            <result name="success" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+
+        <!--条件查询-->
+        <action name="selectall" class="com.wangdoudou.controller.TeachersController" method="selectall">
+            <result name="success" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+        <!--保存教师信息-->
+        <action name="saveString" class="com.wangdoudou.controller.TeachersController" method="saveString">
+            <result name="teacherinforesult" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+       <!-- 修改教师信息-->
+        <action name="xiuteacherinfo" class="com.wangdoudou.controller.TeachersController" method="xiuteacherinfo">
+            <result name="saveString" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+       <!-- 重置密码-->
+        <action name="resetpassword" class="com.wangdoudou.controller.TeachersController" method="resetpassword">
+            <result name="resetpassword2" type="json">
+                <param name="root">jsoner</param>
+            </result>
+
+        </action>
+       <!-- 账号有序生成-->
+        <action name="addTeachers" class="com.wangdoudou.controller.TeachersController" method="addTeachers">
+            <result name="addTeacheret" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+        <!--保存教师信息-->
+        <action name="saveinfo" class="com.wangdoudou.controller.TeachersController" method="saveinfo">
+            <result name="saveinfo1" type="json">
+                <param name="root">jsoner</param>
+            </result>
+        </action>
+
+
+        <!--班级显示-->
+        <action name="showall" class="com.wangdoudou.controller.ClassesController" method="showall">
+            <result name="successes" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+        <!-- 条件查询-->
+        <action name="selectway" class="com.wangdoudou.controller.ClassesController" method="selectway">
+            <result name="successur" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+      <!--  查询讲师姓名-->
+        <action name="selectTeachersTjob0" class="com.wangdoudou.controller.ClassesController" method="selectTeachersTjob0">
+            <result name="teachersinfo" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+     <!-- 查询班主任姓名-->
+        <action name="selectTeachersTjob1" class="com.wangdoudou.controller.ClassesController" method="selectTeachersTjob1">
+            <result name="teachersinfo" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+        <!--修改-->
+        <action name="saveOrupdateClasses" class="com.wangdoudou.controller.ClassesController" method="saveOrupdateClasses">
+            <result name="teachersinfo" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+       <!-- 根据id查询班级表中的数据-->
+        <action name="QueryClasses" class="com.wangdoudou.controller.ClassesController" method="QueryClasses">
+            <result name="teachersinfo" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+
+        </action>
+       <!-- 显示学生主界面信息-->
+        <action name="showdd" class="com.wangdoudou.controller.StudentsController" method="showdd">
+            <result name="jsoning" type="json">
+                <param name="root">jsoning</param>
+            </result>
+
+        </action>
+       <!-- 根据条件查询-->
+          <action name="selectStudentinfo" class="com.wangdoudou.controller.StudentsController" method="selectStudentinfo">
+              <result name="jsoning" type="json">
+                  <param name="root">jsoning</param>
+              </result>
+
+          </action>
+     <!--   添加信息-->
+        <action name="saveOrupdateStudents" class="com.wangdoudou.controller.StudentsController" method="saveOrupdateStudents">
+            <result name="jsoning" type="json">
+                <param name="root">jsoning</param>
+            </result>
+
+        </action>
+       <!-- 编辑-->
+        <action name="stringinfo" class="com.wangdoudou.controller.StudentsController" method="stringinfo">
+            <result name="jsoning" type="json">
+                <param name="root">jsoning</param>
+            </result>
+
+        </action>
+
+      <!--  重置密码-->
+        <action name="resetinfo" class="com.wangdoudou.controller.StudentsController" method="resetinfo">
+            <result name="jsoning" type="json">
+                <param name="root">jsoning</param>
+            </result>
+
+        </action>
+      <!--  删除-->
+               <action name="deletestudentsinfo" class="com.wangdoudou.controller.StudentsController" method="deletestudentsinfo">
+            <result name="jsoning" type="json">
+                <param name="root">jsoning</param>
+            </result>
+
+        </action>
+
+
+
+    </package>
+</struts>
