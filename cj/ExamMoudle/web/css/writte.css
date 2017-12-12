@@ -1,0 +1,32 @@
+#writte_main{
+    width: 80%;
+
+
+
+}
+#writte_ton{
+    width: 80%;
+    height: 200px;
+  background-color: red;
+    position: relative;
+    text-align: center;
+}
+#writte_zj{
+    width: 70%;
+    height: 600px;
+    background-color: blueviolet;
+    position: relative;
+}
+#writte_dite{
+    width: 70%;
+    height: 300px;
+
+    position: relative;
+}
+#beintain_ton{
+    width: 70%;
+    height: 80px;
+
+    text-align: left;
+
+}

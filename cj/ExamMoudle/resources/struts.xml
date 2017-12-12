@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="default" namespace="/" extends="json-default">
+
+<!--登陆-->
+        <action name="logininfo" class="com.cj.Controller.Logincontroller" method="logininfo">
+            <result name="login">login.jsp </result><!--错误回到登陆界面-->
+            <result name="teacher">teacher.jsp</result>              <!--成功调到老师界面-->
+            <result name="student">student.jsp</result>
+        </action>
+        <!--查询老师数据-->
+        <action name="*" class="com.cj.Controller.Teacherconller" method="{1}">
+            <result name="teacher" type="json">
+            <param name="root">jsonStr</param>
+            </result>
+        </action>
+         <!--根据条件查询老师数据-->
+        <action name="selectteacher" class="com.cj.Controller.Teacherconller" method="selectteacher">
+            <result name="teacher" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+       <!--增加OR修改   获取当前时间  获取当日的第几位注册的-->
+        <action name="insertteacher" class="com.cj.Controller.InsertTeacherController" method="insertteacher">
+            <result name="teachers" type="json">
+                <param name="root">jsonstr</param>
+            </result>
+        </action>
+
+            <!--增加老师信息-->
+        <action name="insertteacherall" class="com.cj.Controller.InsertTeacherController" method="insertteacherall">
+
+            <result name="teacher">teacher.jsp</result>              <!--成功调到老师界面-->
+            <result name="insertteacher">insertteacher.jsp</result><!--失败-->
+        </action>
+        <!--删除-->
+
+        <action name="deleteteacher" class="com.cj.Controller.InsertTeacherController" method="deleteteacher">
+
+            <result name="teacher">teacher.jsp</result>              <!--成功调到老师界面-->
+            <result name="false">login.jsp</result>
+        </action>
+
+
+
+
+<!--编辑老师-->
+        <action name="compileteacher" class="com.cj.Controller.InsertTeacherController" method="compileteacher">
+
+            <result name="teacher">teacher.jsp</result>              <!--成功调到老师界面-->
+            <result name="editteacher">editteacher.jsp</result><!--失败-->
+        </action>
+
+
+
+
+        <!--===================班级 =======-->
+        <!--显示班级-->
+        <action name="selectclassall" class="com.cj.Controller.ClassController" method="selectclassall">
+            <result name="class" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+<!--根据条件查询-->
+        <action name="selectconditionclass" class="com.cj.Controller.ClassController" method="selectconditionclass">
+            <result name="class" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <!--增加老师-->
+        <action name="insertclass" class="com.cj.Controller.ClassController" method="insertclass">
+            <result name="class">class.jsp</result>
+            <result name="insertclass">insertclass.jsp</result>
+        </action>
+        <!--================================学生-->
+
+        <!--显示学生-->
+        <action name="selectstudentall" class="com.cj.Controller.StudentController" method="selectstudentall">
+            <result name="student" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+
+<!-- ========= 上传-->
+        <action name="uploading" class="com.cj.Controller.UploaDingController" method="uploading">
+            <result name="student" type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+    </package>
+</struts>
