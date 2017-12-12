@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+    <package name="default" namespace="/" extends="json-default">
+
+        <!--登录-->
+        <action name="*" class="com.wangyinghao.controller.LoginController" method="{1}">
+            <result name="teachermanager">teachermanager.jsp</result>
+            <result name="login">login.jsp</result>
+        </action>
+
+
+        <!--显示教师管理界面中的教师的所有数据-->
+        <action name="showteachersview" class="com.wangyinghao.controller.TeachersViewController" method="showteachersview">
+            <result name="teachermanager" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+
+        <!--分页的配置-->
+        <action name="showteacherinfopage" class="com.wangyinghao.controller.TeachersViewController" method="showteacherinfopage">
+            <result name="showteacherinfopage" type="json">
+                <param name="root">jsonpage</param>
+            </result>
+        </action>
+
+
+        <!--是对教师界面的根据条件查询后查询结果显示到table中-->
+        <action name="showselectresult" class="com.wangyinghao.controller.TeachersViewController" method="showselectresult">
+            <result name="teachermanager" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+
+        </action>
+
+        <!--显示教师信息账号，是对添加教师界面的教师增加中的(显示教师信息的编号)的操作（针对添加教师insertteacher界面的操作）-->
+        <action name="addAndupdate" class="com.wangyinghao.controller.TeachersViewController" method="addAndupdate">
+            <result name="insertteacher" type="json">
+                <param name="root">jsonstring</param>
+            </result>
+        </action>
+
+        <!--增加/修改教师信息成功并返回教师界面，是对教师界面中点击添加教师信息的操作添加按钮功能（针对insertteacher）-->
+        <action name="insertteacherinfo" class="com.wangyinghao.controller.TeachersViewController" method="insertteacherinfo">
+            <result name="teachermanager" type="redirect">teachermanager.jsp</result>
+        </action>
+
+        <!--增加/修改教师信息成功并返回教师界面，是对教师界面中点击添加教师信息的操作中的取消按钮功能（针对insertteacher）-->
+        <action name="cancelteacherinfo" class="com.wangyinghao.controller.TeachersViewController" method="cancelteacherinfo">
+            <result name="cancelteacherinfo">teachermanager.jsp</result>
+        </action>
+
+        <!--点击编辑出现增加/修改教师信息-->
+        <action name="editnewteacher" class="com.wangyinghao.controller.TeachersViewController" method="editnewteacher">
+            <result name="editnewteacher">editnewteacher.jsp</result>
+        </action>
+
+        <!--教师界面重置密码-->
+        <action name="resetpassword" class="com.wangyinghao.controller.TeachersViewController" method="resetpassword">
+            <result name="resetpassword"></result>
+        </action>
+
+        <!--教师界面的删除功能-->
+        <action name="deleteteacherinfo" class="com.wangyinghao.controller.TeachersViewController" method="deleteteacherinfo">
+            <result name="deleteteacherinfo"></result>
+        </action>
+
+    </package>
+
+
+</struts>

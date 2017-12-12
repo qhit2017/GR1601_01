@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.wangyinghao.bean.Students" table="students">
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="sid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="sid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="snumber" type="java.lang.String">
+            <column name="snumber"/>
+        </property>
+        <property name="sname" type="java.lang.String">
+            <column name="sname"/>
+        </property>
+        <property name="ssex" type="java.lang.String">
+            <column name="ssex"/>
+        </property>
+        <property name="senter" type="java.util.Date">
+            <column name="senter"/>
+        </property>
+        <property name="cid" type="java.lang.Integer">
+            <column name="cid"/>
+        </property>
+        <property name="sbirthday" type="java.util.Date">
+            <column name="sbirthday"/>
+        </property>
+        <property name="sidnumber" type="java.lang.String">
+            <column name="sidnumber"/>
+        </property>
+        <property name="sprovince" type="java.lang.String">
+            <column name="sprovince"/>
+        </property>
+        <property name="smahor" type="java.lang.String">
+            <column name="smahor"/>
+        </property>
+        <property name="stel" type="java.lang.String">
+            <column name="stel"/>
+        </property>
+        <property name="sptel" type="java.lang.String">
+            <column name="sptel"/>
+        </property>
+
+
+        <property name="sdormitory" type="java.lang.String">
+            <column name="sdormitory"/>
+        </property>
+        <property name="spolitics" type="java.lang.String">
+            <column name="spolitics"/>
+        </property>
+        <property name="scity" type="java.lang.String">
+            <column name="scity"/>
+        </property>
+        <property name="sattend" type="java.lang.String">
+            <column name="sattend"/>
+        </property>
+        <property name="saddress" type="java.lang.String">
+            <column name="saddress"/>
+        </property>
+        <property name="srelation" type="java.lang.String">
+            <column name="srelation"/>
+        </property>
+        <property name="sbasicinfo" type="java.lang.String">
+            <column name="sbasicinfo"/>
+        </property>
+        <property name="sdnumber" type="java.lang.Integer">
+            <column name="sdnumber"/>
+        </property>
+        <property name="seducation" type="java.lang.String">
+            <column name="seducation"/>
+        </property>
+        <property name="sphoto" type="java.lang.String">
+            <column name="sphoto"/>
+        </property>
+        <property name="spassword" type="java.lang.String">
+            <column name="spassword"/>
+        </property>
+        <property name="srole" type="java.lang.Integer">
+            <column name="srole"/>
+        </property>
+
+
+
+
+
+    </class>
+</hibernate-mapping>
