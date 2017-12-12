@@ -1,0 +1,9 @@
+#is_add{
+    position: relative;
+    height: 800px;
+    width: 700px;
+    left: 600px;
+    top: 50px;
+    border: 2px solid #eaeaea;
+    background-color: darkgray;
+}

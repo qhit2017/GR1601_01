@@ -1,0 +1,36 @@
+#m_best{
+    position: relative;
+    height: 750px;
+    width: 1450px;
+    /*background-color: blueviolet;*/
+}
+#m_top{
+    position: relative;
+    height: 150px;
+    width: 1503px;
+    background-color: red;
+    /*border: solid 2px;*/
+
+}
+#m_top_info{
+    position: relative;
+    height: 20px;
+    width: 600px;
+    left: 850px;
+    /*background-color: aquamarine;*/
+}
+#m_left{
+    position: relative;
+    height: 600px;
+    width: 150px;
+    /*background-color: blue;*/
+    border:2px solid ;
+}
+#m_right{
+    position: relative;
+    height: 600px;
+    width: 1350px;
+    left:154px;
+    top: -602px;
+    /*background-color: gray;*/
+}

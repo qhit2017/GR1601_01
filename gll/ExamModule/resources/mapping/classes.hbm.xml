@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--name bean类的名字   table  表的名字 -->
+    <class name="com.guolonglong.bean.Classes" table="classes"><!--dbo是 server默认的-->
+
+        <!--主键  name bean类的属性名字 type bean类的属性的类型-->
+        <id name="cid" type="java.lang.Integer">
+            <!-- 表的列的名字-->
+            <column name="cid" />
+            <!-- 自增长有关-->
+            <generator class="native" />
+        </id>
+
+        <!--其他属性-->
+        <property name="cnumber" type="java.lang.String">
+            <column name="cnumber"/>
+        </property>
+
+        <property name="cname" type="java.lang.String">
+            <column name="cname"/>
+        </property>
+
+        <property name="cdirection" type="java.lang.String">
+            <column name="cdirection"/>
+        </property>
+
+        <property name="cbegin" type="java.lang.String">
+            <column name="cbegin"/>
+        </property>
+
+        <property name="cg1" type="java.lang.Integer">
+            <column name="cg1"/>
+        </property>
+
+        <property name="cg2" type="java.lang.Integer">
+            <column name="cg2"/>
+        </property>
+
+        <property name="cg3" type="java.lang.Integer">
+            <column name="cg3"/>
+        </property>
+
+        <property name="cstate" type="java.lang.Integer">
+            <column name="cstate"/>
+        </property>
+
+        <property name="cremark" type="java.lang.String">
+            <column name="cremark"/>
+        </property>
+
+
+
+
+        <!--多对一的关系映射-->
+        <many-to-one name="teachersl" class="com.guolonglong.bean.Teachers" column="tidl" lazy="false" fetch="join"></many-to-one>
+
+        <many-to-one name="teachersh" class="com.guolonglong.bean.Teachers" column="tidh" lazy="false" fetch="join"></many-to-one>
+        <!--<set name="studentsSet">
+            <key column="cid"></key>
+            <one-to-many class="com.guolonglong.bean.Students"></one-to-many>
+        </set>-->
+
+
+    </class>
+</hibernate-mapping>
