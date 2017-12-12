@@ -37,4 +37,7 @@ public interface ExamService {
 
     //更改grade中的tid
     public void updateGradeExamService(Grade grade);
+
+    //根据tid进行状态数据更改
+    public void updatetestpapertstateExamService(Testpaper testpaper,Integer tid);
 }

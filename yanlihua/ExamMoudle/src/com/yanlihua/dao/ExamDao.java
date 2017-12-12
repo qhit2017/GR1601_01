@@ -37,4 +37,7 @@ public interface ExamDao {
 
     //更改grade中的信息（考试完后又成绩）
     public void updateGradeExamDao(Grade grade);
+
+    //根据tid进行状态数据更改
+    public void updatetestpapertstateExamDao(Testpaper testpaper,Integer tid);
 }

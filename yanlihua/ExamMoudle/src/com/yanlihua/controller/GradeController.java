@@ -35,9 +35,18 @@ public class GradeController extends ActionSupport implements ModelDriven{
     public String selecttestpaperallinfoway1(){
         List<Testpaper> testpaperList=examService.selectTestpaperAllInfoExamService();
         System.out.println("---------------selecttestpaperallinfoway1"+testpaperList.size());
+
+        for (Testpaper t:testpaperList) {
+            Set<Grade> gradeSet=t.getGradeSet();
+            for(Grade g:gradeSet){
+                g.setTestpaper(null);
+            }
+        }
         if (testpaperList.size()!=0||testpaperList!=null){
             jsonArray=JSONArray.fromObject(testpaperList);
         }
+
+
         testpaperinfo= jsonArray.toString();
         System.out.println("examinfo============"+testpaperinfo);
         return "selecttestpaperallinfoway1result";
@@ -76,6 +85,14 @@ public class GradeController extends ActionSupport implements ModelDriven{
         //Testpaper testpaper2=examService.updateTestpaperByTidExamService(testpaper.getTid());
         HttpSession httpSession = ServletActionContext.getRequest().getSession();
         Testpaper  testpaper2=(Testpaper) httpSession.getAttribute("testpaper");
+
+        Set<Grade> gradeSet=testpaper2.getGradeSet();
+        for(Grade g:gradeSet){
+            g.setTestpaper(null);
+
+        }
+
+
        // Set<Grade> gradeSet=testpaper2.getGradeSet();
         jsonArray= JSONArray.fromObject(testpaper2);
         testpaperinfo= jsonArray.toString();

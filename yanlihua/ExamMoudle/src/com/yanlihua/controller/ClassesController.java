@@ -124,7 +124,8 @@ public class ClassesController extends ActionSupport implements ModelDriven{
         if (tidl!=null&&!tidl.equals("")) {
              tidlid = Integer.valueOf(tidl);
         }
-        List<Classes> classesList=classService.selectClassByFourConditionClassService(classes.getCbegin(),classes.getCdirection(),tidhid,tidlid);
+        //数据库(造数据要严谨)
+        List<Classes> classesList=classService.selectClassByFourConditionClassService(classes.getCbegin(),classes.getCdirection(),tidlid,tidhid);
         jsonArray=JSONArray.fromObject(classesList);
         teachersinfo=jsonArray.toString();
         System.out.println("++++++++++++++++++++++"+teachersinfo);

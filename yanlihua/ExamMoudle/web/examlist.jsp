@@ -111,7 +111,7 @@
 
                     } else {
                         if (obj[i].tstate == "考试中") {
-                            strinfo = strinfo + "<tr> <td class='tablemargin'>" + obj[i].tid + "</td> <td class='tablemargin'>" + obj[i].ttype + "</td> <td class='tablemargin'>" + obj[i].subject.sucourse + "</td> <td class='tablemargin'>" + obj[i].ttitle + "</td> <td class='tablemargin'>" + obj[i].cname + "</td> <td class='tablemargin'>" + obj[i].ttime + "</td> <td class='tablemargin'>考试中</td> <td class='tablemargin'>结束考试  查看成绩  查看试卷</td> </tr>";
+                            strinfo = strinfo + "<tr> <td class='tablemargin'>" + obj[i].tid + "</td> <td class='tablemargin'>" + obj[i].ttype + "</td> <td class='tablemargin'>" + obj[i].subject.sucourse + "</td> <td class='tablemargin'>" + obj[i].ttitle + "</td> <td class='tablemargin'>" + obj[i].cname + "</td> <td class='tablemargin'>" + obj[i].ttime + "</td> <td class='tablemargin'>考试中</td> <td class='tablemargin'><a onclick='endexam(" + obj[i].tid + ")'>结束考试</a>  查看成绩  查看试卷</td> </tr>";
 
                         }
                         else if (obj[i].tstate == "考试结束") {
@@ -232,7 +232,18 @@
         });
 
     });
-
+//考试结束按钮
+   /* function endexam(tid) {
+       alert(tid);
+        $.ajax({
+            url:"changetstateway?tid="+tid,
+            type:"get",
+            success:function (msg) {
+                var obj=$.parseJSON(msg);
+                alert(obj.result);
+            }
+        });
+    }*/
     function course(a) {
 
         //创建试卷按键(保存)

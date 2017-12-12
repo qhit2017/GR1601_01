@@ -321,8 +321,13 @@
                 <param name="root">examinfo</param>
             </result>
         </action>
-
-
+<!--changetstateway-->
+        <!--=====================================结束考试更改状态==================================================-->
+        <action name="changetstateway" class="com.yanlihua.controller.ExamController" method="changetstateway">
+            <result name="changetstatewayresult" type="json">
+                <param name="root">examinfo</param>
+            </result>
+        </action>
         <!--=========================================试题信息的导入==========================================================-->
         <action name="importexaminfo" class="com.yanlihua.controller.ImportExamInfoController" method="importexaminfo">
             <result name="success" type="json">

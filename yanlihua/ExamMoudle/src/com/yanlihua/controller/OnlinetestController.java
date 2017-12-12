@@ -44,6 +44,13 @@ public class OnlinetestController extends ActionSupport {
             t.setGradeSet(new HashSet<Grade>(t.getGradeSet().size()));
             //System.out.println("000000000000-"+t.get);
         }*/
+
+        for (Testpaper t:testpaperList) {
+            Set<Grade> gradeSet=t.getGradeSet();
+            for(Grade g:gradeSet){
+                g.setTestpaper(null);
+            }
+        }
         jsonArray = JSONArray.fromObject(testpaperList);
         onlinetestStr = jsonArray.toString();
         System.out.println("222222222+" + onlinetestStr);
@@ -53,6 +60,12 @@ public class OnlinetestController extends ActionSupport {
     //根据tid显示答题卡上的个人信息
     public String selecttestpaperinfobytidway() {
         Testpaper testpaper = onelinetestService.selectTestpaperInfoByTidOnelinetestService(tid);
+
+            Set<Grade> gradeSet=testpaper.getGradeSet();
+            for(Grade g:gradeSet){
+                g.setTestpaper(null);
+            }
+
         jsonObject.put("testpaper", testpaper);
         onlinetestStr = jsonObject.toString();
         System.out.println("222222222+" + onlinetestStr);

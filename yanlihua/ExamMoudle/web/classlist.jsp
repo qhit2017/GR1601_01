@@ -226,6 +226,8 @@
                     var obj=$a.parseJSON(msg);
                     if(obj.result=="true"){
                         alert("班级信息添加成功！！！");
+                        closeShow();
+                        refresh();
                     }
                    else{
                         alert("班级信息添加失败！！！");
@@ -437,6 +439,8 @@
                 var obj=$a.parseJSON(msg);
                 if(obj.result=="true"){
                     alert("班级信息修改成功！！！");
+                    closeShow();
+                    refresh();
                 }
                 else{
                     alert("班级信息修改失败！！！");
